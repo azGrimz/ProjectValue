@@ -1,0 +1,75 @@
+body,h1,h2,h3,h4,h5,h6 {
+    font-family: "Lato", sans-serif
+}
+.w3-bar,h1,button {
+    font-family: "Montserrat", sans-serif
+}
+.fa-anchor,.fa-coffee {
+    font-size:200px
+}
+.header {
+    height: 500px;
+    /*background-color: red; /* For browsers that do not support gradients */
+    background: rgb(0,86,200);
+    background: linear-gradient(90deg, rgba(0,86,200,1) 19%, rgba(124,188,255,1) 84%);
+    text-align: left;
+    color: white;
+    padding: 135px;
+}
+#imgpos {
+    position:absolute;
+    right: 200px;
+    top: 165px;
+    width: 500px;
+    height: 300px;
+    padding: 10px;
+}
+.header1 {
+    height: 1px;
+    background-color: white;
+    text-align: center;
+    color: black;
+    padding: 1px;
+}
+.body{
+    /*height: 500px;*/
+    background-color: white; /* For browsers that do not support gradients */
+    top: 50px;
+    /*text-align: center;*/
+    color: white;
+    padding: 300px;
+}
+.header2 {
+    height: 400px;
+    background-image: linear-gradient(to right, purple, violet, pink);
+    text-align: center;
+    color: white;
+    padding: 135px;
+ }
+.footer {
+    height: 1px;
+    background-color: purple;
+    /*background-image: linear-gradient(to right, purple, violet, pink);*/
+    text-align: left;
+    color: white;
+    padding: 80px;
+}
+
+.textfooter{
+    height: 10px;
+    /*top: 50px;*/
+    text-align: center;
+    color: white;
+}
+.iconfooter{
+    /*right: 100px;
+    top: 10px;*/
+    height: 1px;
+    text-align: right;
+    color: white;
+}
+
+.form-center {
+    display:flex;
+    justify-content: center;
+}
