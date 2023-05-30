@@ -23,11 +23,11 @@
         <h1>LOGIN</h1>
         <div class="textfield">
           <label for="usuario">Usuário</label>
-          <input type="text" name="usuario" placeholder="Usuário">
+          <input type="text" name="usuario">
         </div>
         <div class="textfield">
           <label for="password">Senha</label>
-          <input type="password" name="password" placeholder="Senha">
+          <input type="password" name="password">
         </div>
         <button class="btn-login">Acessar</button>
         <a href=""><strong>Cadastre-se!</strong></a>
