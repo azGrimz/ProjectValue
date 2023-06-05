@@ -14,6 +14,7 @@
   <title>Login</title>
 </head>
 <body>
+    <%@include file="WEB-INF/jspf/navbar.jspf"%>
   <div class="main-login">
     <div class="left-login">
       <h1>Seja muito bem-vindo!<br>Project Value</h1>
@@ -34,5 +35,6 @@
       </div>
     </div>
   </div>
+  <%@include file="WEB-INF/jspf/footer.jspf"%>
 </body>
 </html>

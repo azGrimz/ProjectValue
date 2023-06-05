@@ -41,14 +41,15 @@ body,h1,h2,h3,h4,h5,h6 {
 }
 .header2 {
     height: 400px;
-    background-image: linear-gradient(to right, purple, violet, pink);
+    /*background-image: linear-gradient(to right, purple, violet, pink);*/
+    background-image: linear-gradient(90deg, rgba(0,86,200,1) 19%, rgba(124,188,255,1) 84%);
     text-align: center;
     color: white;
     padding: 135px;
  }
 .footer {
     height: 1px;
-    background-color: purple;
+    background-color: rgb(9, 30, 66);
     /*background-image: linear-gradient(to right, purple, violet, pink);*/
     text-align: left;
     color: white;
@@ -82,10 +83,17 @@ body,h1,h2,h3,h4,h5,h6 {
   justify-content: center;
   align-items: center;
 }
+.header-cadastro {
+    height: 500px;
+    /*background-color: red; /* For browsers that do not support gradients */
+    text-align: left;
+    color: cornflowerblue;
+    padding: 135px;
+}
 
 .left-cadastro {
   width: 50vw;
-  height: 100vh;
+  height: 50vh;
   display: flex;
   justify-content: center;
   align-items: center;
