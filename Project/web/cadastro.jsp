@@ -33,7 +33,7 @@
   </div>
   <div class="col-md-6">
     <label for="inputPassword4" class="form-label">Nome de Usuário</label>
-    <input type="password" class="form-control" id="inputPassword4">
+    <input type="text" class="form-control" id="inputPassword4">
   </div>
 
  
@@ -44,7 +44,7 @@
  
   <div class="col-md-6">
     <label for="inputZip" class="form-label">Senha</label>
-    <input type="text" class="form-control" id="inputZip">
+    <input type="password" class="form-control" id="inputZip">
   </div>
  
   <div class="col-12">
