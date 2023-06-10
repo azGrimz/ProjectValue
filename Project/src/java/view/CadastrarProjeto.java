@@ -22,42 +22,63 @@ import jakarta.servlet.http.HttpServletResponse;
 @WebServlet(name = "CadastrarProjeto", urlPatterns = {"/cadastrarprojeto"})
 public class CadastrarProjeto extends HttpServlet {
 
-        @Override
+       @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         RequestDispatcher dispatcher = getServletContext()
-                .getRequestDispatcher("/WEB-INF/ProductModule/cadastrarProduto.jsp");
+                .getRequestDispatcher("/cadastrarProjeto.jsp");
         dispatcher.forward(request, response);
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        System.out.println("POST - CADASTRAR PRODUTO");
+        System.out.println("POST - CADASTRAR PROJETO");
         request.setCharacterEncoding("UTF-8");
+        
         Projeto u = new Projeto();
         u.setNome(request.getParameter("nome"));
         u.setHoraTrabalhada(Double.parseDouble(request.getParameter("horatrabalhada")));
         u.setTempoDedicadoProjeto(Double.parseDouble(request.getParameter("tempodedicado")));
         u.setIdUsuario(Integer.parseInt(request.getParameter("idUsuario")));
+        u.setDatainicio(request.getParameter("datainicio"));
+        u.setDatafim(request.getParameter("datafim"));
         String page = "home.jsp";
 
-        ProjetoMetodos dao = new ProjetoMetodos();
-        double valorTotal = calcularValorTotal(u);
+       long prazoStatus = calcularPrazoEStatus(u);
+        u.setPrazoDias(prazoStatus);
+
+        double valorTotal = calcularValorTotal(u, prazoStatus);
         u.setValorTotal(valorTotal);
+        
+        ProjetoMetodos dao = new ProjetoMetodos();
         if (dao.cadastraProjeto(u)) {
 
             page = "listarprojetos";
             response.sendRedirect(page);
         } else {
             //enviar um atributo msg de erro
-            request.setAttribute("erro", "Produto não inserido.");
+            request.setAttribute("erro", "Projeto não inserido.");
         }
         ;
     }
     
-     public double calcularValorTotal(Projeto p) {
-        double valorTotal = p.getHoraTrabalhada() * p.getTempoDedicadoProjeto();
+    public long calcularPrazoEStatus(Projeto p) {
+        LocalDate dataInicio = LocalDate.parse(p.getDatainicio());
+        LocalDate dataFim = LocalDate.parse(p.getDatafim());
+        LocalDate dataAtual = LocalDate.now();
+
+        if (dataAtual.isBefore(dataFim)) {
+            p.setStatus("Em andamento");
+        } else {
+            p.setStatus("Finalizado");
+        }
+
+        long prazoDias = ChronoUnit.DAYS.between(dataInicio, dataFim);
+        return prazoDias;
+    }
+    
+    public double calcularValorTotal(Projeto p, long prazoDias) {
+        double valorTotal = p.getHoraTrabalhada()* p.getTempoDedicadoProjeto() * (double) prazoDias;
         return valorTotal;
     }
-}

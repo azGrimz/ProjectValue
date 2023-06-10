@@ -15,11 +15,11 @@ import java.util.logging.Logger;
 import model.Usuario;
 import java.util.ArrayList;
 
-
 public class ProjetoMetodos {
+
     public boolean cadastraProjeto(Projeto projeto) {
-         String insertTableSQL = "INSERT INTO projeto" + "(nm_projeto, hora_trabalhada, tempo_dedicado, cd_usuario, vl_total) VALUES" + "(?,?,?,?,?) ;";
-         //String insertTableSQL = "INSERT INTO projeto" + "(nm_projeto, hora_trabalhada, tempo_dedicado, cd_usuario) VALUES" + "(?,?,?,?) ;";
+        String insertTableSQL = "INSERT INTO projeto"
+                + "(nm_projeto, hora_trabalhada, tempo_dedicado, cd_usuario, vl_total, dt_inicio, dt_fim, prazo, status) VALUES" + "(?,?,?,?,?,?,?,?,?) ;";
         PreparedStatement preparedStatement;
         try {
             preparedStatement = Database.getConexao().prepareStatement(insertTableSQL);
@@ -28,6 +28,10 @@ public class ProjetoMetodos {
             preparedStatement.setDouble(3, projeto.getTempoDedicadoProjeto());
             preparedStatement.setInt(4, projeto.getIdUsuario());
             preparedStatement.setDouble(5, projeto.getValorTotal());
+            preparedStatement.setString(6, projeto.getDatainicio());
+            preparedStatement.setString(7, projeto.getDatafim());
+            preparedStatement.setLong(8, projeto.getPrazoDias());
+            preparedStatement.setString(9, projeto.getStatus());
             preparedStatement.executeUpdate();
             return true;
         } catch (SQLException e) {
@@ -36,16 +40,23 @@ public class ProjetoMetodos {
         }
     }
 
-    public boolean alteraVenda(Projeto projeto) {
-       String insertTableSQL = "UPDATE projeto SET nm_projeto = ?, hora_trabalhada = ?, tempo_dedicado = ?"
-                + "WHERE cd_projeto = ? ;";
+    public boolean alteraProjeto(Projeto projeto) {
+        String insertTableSQL = "UPDATE projeto SET nm_projeto = ?, hora_trabalhada = ?, tempo_dedicado = ?, dt_inicio = ?, dt_fim = ?, prazo = ?, status = ?, vl_total = ?"
+                + "WHERE cd_projeto = ? AND cd_usuario = ?;";
         PreparedStatement preparedStatement;
         try {
             preparedStatement = Database.getConexao().prepareStatement(insertTableSQL);
             preparedStatement.setString(1, projeto.getNome());
             preparedStatement.setDouble(2, projeto.getHoraTrabalhada());
             preparedStatement.setDouble(3, projeto.getTempoDedicadoProjeto());
-            preparedStatement.setInt(4, projeto.getId());
+            preparedStatement.setString(4, projeto.getDatainicio());
+            preparedStatement.setString(5, projeto.getDatafim());
+            preparedStatement.setLong(6, projeto.getPrazoDias());
+            preparedStatement.setString(7, projeto.getStatus());
+            preparedStatement.setDouble(8, projeto.getValorTotal());
+            preparedStatement.setInt(9, projeto.getId());
+            preparedStatement.setInt(10, projeto.getIdUsuario());
+
             preparedStatement.executeUpdate();
             return true;
         } catch (SQLException e) {
@@ -83,6 +94,8 @@ public class ProjetoMetodos {
                 prod.setNome(rs.getString("nm_projeto"));
                 prod.setValorTotal(rs.getDouble("vl_total"));
                 prod.setIdUsuario(rs.getInt("cd_usuario"));
+                prod.setPrazoDias(rs.getLong("prazo"));
+                prod.setStatus(rs.getString("status"));
             }
             rs.close();
             con.close();
@@ -110,6 +123,8 @@ public class ProjetoMetodos {
                 prod.setNome(rs.getString("nm_projeto"));
                 prod.setValorTotal(rs.getDouble("vl_total"));
                 prod.setIdUsuario(rs.getInt("cd_usuario"));
+                prod.setPrazoDias(rs.getLong("prazo"));
+                prod.setStatus(rs.getString("status"));
 
                 listaProjetos.add(prod);
             }
@@ -120,6 +135,6 @@ public class ProjetoMetodos {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return null;    
+        return null;
     }
 }
