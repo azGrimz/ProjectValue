@@ -21,7 +21,7 @@ import jakarta.servlet.http.HttpSession;
  */
 @WebServlet(name = "CadastroServlet", urlPatterns = {"/cadastrarusuario"})
 public class CadastroServlet extends HttpServlet {
-     @Override
+    @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         RequestDispatcher dispatcher = getServletContext()
@@ -33,7 +33,7 @@ public class CadastroServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
          System.out.println("POST - CADASTRAR USUARIO");
-       Usuario u = new Usuario();
+        Usuario u = new Usuario();
         u.setSenha(request.getParameter("senha"));
         u.setNome(request.getParameter("usuario"));
         u.setEmail(request.getParameter("email"));
