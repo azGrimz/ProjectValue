@@ -26,24 +26,24 @@
                 </div>
 
                 <div class="headerabout">            
-                    <p><strong>Bianca Drumond</strong> Front-End. Formada em Engenharia<br>
-                        Civil em 2018, me interessei em aprender sobre <br> tecnologia durante a pandemia.</p>            
+                    <p><strong>Bianca Drumond</strong> Formada em Engenharia Civil em<br>
+                         2018, me interessei em aprender sobre tecnologia<br>  durante a pandemia.</p>            
                     <img src="Resources/images/bianca.jpeg"  class="w3-circle w3-right" id="imgpos2">
                     <br><br>
-                    <p><strong>Carla Sanz</strong> Front-End. Formada em Administração de<br>
-                        Empresas em 2015, resolvi me aventurar no mundo da<br> tecnologia em 2020.</p>            
+                    <p><strong>Carla Sanz</strong> Formada em Administração de Empresas<br>
+                         em 2015, resolvi me aventurar nesse mundo da<br> tecnologia em 2020.</p>            
                     <img src="Resources/images/carla.jpeg"  class="w3-circle w3-right" id="imgpos3">
                     <br><br>
-                    <p><strong>Pedro Vinícius</strong> Back-End. Me interesso muito por<br>
-                        essa parte do Back-End. Vim da Etec e agora estou<br> aprimorando meus conhecimentos na Fatec.</p>            
-                    <img src="Resources/images/carla.jpeg"  class="w3-circle w3-right" id="imgpos4">
+                    <p><strong>Pedro Vinícius</strong> Me interesso muito pela parte do <br>
+                        Back-End. Vim da Etec e agora estou aprimorando<br> meus conhecimentos na Fatec.</p>            
+                    <img src="Resources/images/pedro.jpeg"  class="w3-circle w3-right" id="imgpos4">
                     <br><br>
-                    <p><strong>Raphael Santos</strong> Front-End. Comecei a me aventurar no<br>
-                        mundo da tecnologia recentemente e estou buscando evoluir<br> nessa área desde a pandemia.</p>            
+                    <p><strong>Raphael Santos</strong> Comecei a me aventurar no mundo 
+                        <br>  da tecnologia recentemente e estou buscando <br> evoluir nessa área desde a pandemia.</p>            
                     <img src="Resources/images/raphael.jpeg"  class="w3-circle w3-right" id="imgpos5">
                     <br><br>
-                    <p><strong>Victória Cabral</strong> Front-End. Sempre me interessei <br> 
-                        por programação. Sou formada na Etec e agora estou<br> cursando ADS na Fatec.</p>            
+                    <p><strong>Victória Cabral</strong> Sempre me interessei pela área da<br> 
+                        programação. Sou formada na Etec e agora estou<br> cursando ADS na Fatec.</p>            
                     <img src="Resources/images/victoria.jpeg"  class="w3-circle w3-right" id="imgpos6">
                     <br>  
                 </div>
