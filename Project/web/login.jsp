@@ -19,11 +19,11 @@
         <!--<h1>LOGIN</h1>-->
         <div class="textfield">
           <label for="usuario">Usuário</label>
-          <input type="text" name="usuario">
+          <input type="text" name="usuario" value="${param.usuario}" placeholder="Usuário" autofocus>
         </div>
         <div class="textfield">
           <label for="password">Senha</label>
-          <input type="password" name="password">
+          <input type="password" name="senha" placeholder="Senha">      
         </div>
         <br>
         <a href="projetos.jsp"><button type="submit" class="btn" style="background: #fe7f2d" >Acessar</button></a>

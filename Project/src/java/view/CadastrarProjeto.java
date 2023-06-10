@@ -37,19 +37,27 @@ public class CadastrarProjeto extends HttpServlet {
         request.setCharacterEncoding("UTF-8");
         Projeto u = new Projeto();
         u.setNome(request.getParameter("nome"));
-        //u.set(Double.parseDouble(request.getParameter("valor")));
-        //u.setDescricao(request.getParameter("descricao"));
+        u.setHoraTrabalhada(Double.parseDouble(request.getParameter("horatrabalhada")));
+        u.setTempoDedicadoProjeto(Double.parseDouble(request.getParameter("tempodedicado")));
+        u.setIdUsuario(Integer.parseInt(request.getParameter("idUsuario")));
         String page = "home.jsp";
 
         ProjetoMetodos dao = new ProjetoMetodos();
-        /*
-        if (dao.cadastraProduto(u)) {
+        double valorTotal = calcularValorTotal(u);
+        u.setValorTotal(valorTotal);
+        if (dao.cadastraProjeto(u)) {
+
             page = "listarprojetos";
             response.sendRedirect(page);
         } else {
             //enviar um atributo msg de erro
-            request.setAttribute("erro", "Projeto não inserido.");
-        }*/
-        
+            request.setAttribute("erro", "Produto não inserido.");
+        }
+        ;
+    }
+    
+     public double calcularValorTotal(Projeto p) {
+        double valorTotal = p.getHoraTrabalhada() * p.getTempoDedicadoProjeto();
+        return valorTotal;
     }
 }

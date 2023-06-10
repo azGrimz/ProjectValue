@@ -34,31 +34,29 @@ public class LoginServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        System.out.println("entrei");
         Usuario u = new Usuario();
-        u.setNome(request.getParameter("usuario"));
-        u.setSenha(request.getParameter("senha"));       
+        u.setLogin(request.getParameter("usuario"));
+        u.setSenha(request.getParameter("senha"));
+
+        String page = "index.jsp";
 
         UsuarioMetodos dao = new UsuarioMetodos();
         
         if (dao.validar(u)) {
             
-            u = dao.procuraUsuarioPeloID(u.getId());
+            u = dao.procuraUsuarioPeloID(u.getLogin());
             request.setAttribute("usuario", u);
             HttpSession ses = request.getSession();
             ses.setAttribute("usuario",u);
             response.sendRedirect("listarprojetos");
-           
         } else {
             //enviar um atributo msg de erro
             request.setAttribute("erro", "Usuário ou senha inválida!");
         }
-
     }
 
     @Override
     public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
-
 }

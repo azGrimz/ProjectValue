@@ -17,16 +17,17 @@ import java.util.ArrayList;
 
 
 public class ProjetoMetodos {
-    public boolean cadastraProjeto(Projeto Projeto) {
-        Projeto.setValorTotal(calcularValorProjeto(Projeto));
-        String insertTableSQL = "INSERT INTO projeto" + "(nm_projeto, hora_trabalhada, tempo_dedicado) VALUES" + "(?,?,?) ;";
+    public boolean cadastraProjeto(Projeto projeto) {
+         String insertTableSQL = "INSERT INTO projeto" + "(nm_projeto, hora_trabalhada, tempo_dedicado, cd_usuario, vl_total) VALUES" + "(?,?,?,?,?) ;";
+         //String insertTableSQL = "INSERT INTO projeto" + "(nm_projeto, hora_trabalhada, tempo_dedicado, cd_usuario) VALUES" + "(?,?,?,?) ;";
         PreparedStatement preparedStatement;
         try {
             preparedStatement = Database.getConexao().prepareStatement(insertTableSQL);
-            preparedStatement.setString(1, Projeto.getNome());
-            preparedStatement.setDouble(2, Projeto.getHoraTrabalhada());
-            preparedStatement.setDouble(3, Projeto.getTempoDedicadoProjeto());
-            
+            preparedStatement.setString(1, projeto.getNome());
+            preparedStatement.setDouble(2, projeto.getHoraTrabalhada());
+            preparedStatement.setDouble(3, projeto.getTempoDedicadoProjeto());
+            preparedStatement.setInt(4, projeto.getIdUsuario());
+            preparedStatement.setDouble(5, projeto.getValorTotal());
             preparedStatement.executeUpdate();
             return true;
         } catch (SQLException e) {
@@ -35,26 +36,25 @@ public class ProjetoMetodos {
         }
     }
 
-    public boolean alteraProjeto(Projeto Projeto) {
-        Projeto.setValorTotal(calcularValorProjeto(Projeto));
-        String insertTableSQL = "UPDATE projeto SET nm_projeto = ?, hora_trabalhada = ?, tempo_dedicado= ?"
+    public boolean alteraVenda(Projeto projeto) {
+       String insertTableSQL = "UPDATE projeto SET nm_projeto = ?, hora_trabalhada = ?, tempo_dedicado = ?"
                 + "WHERE cd_projeto = ? ;";
         PreparedStatement preparedStatement;
         try {
             preparedStatement = Database.getConexao().prepareStatement(insertTableSQL);
-            preparedStatement.setString(1, Projeto.getNome());
-            preparedStatement.setDouble(2, Projeto.getHoraTrabalhada());
-            preparedStatement.setDouble(3, Projeto.getTempoDedicadoProjeto());
-            preparedStatement.setInt(4, Projeto.getId());
+            preparedStatement.setString(1, projeto.getNome());
+            preparedStatement.setDouble(2, projeto.getHoraTrabalhada());
+            preparedStatement.setDouble(3, projeto.getTempoDedicadoProjeto());
+            preparedStatement.setInt(4, projeto.getId());
             preparedStatement.executeUpdate();
             return true;
         } catch (SQLException e) {
             e.printStackTrace();
             return false;
         }
-
     }
-     public boolean excluiProjeto(Integer toDelete) {
+
+    public boolean excluiProjeto(Integer toDelete) {
         String insertTableSQL = "DELETE FROM projeto WHERE cd_projeto = ? ; ";
         PreparedStatement preparedStatement;
         try {
@@ -68,13 +68,13 @@ public class ProjetoMetodos {
         }
     }
 
-    public Projeto procuraProjetoPeloID(Integer idProjeto) {
+    public Projeto procuraProjetoPeloID(Integer id) {
 
         try {
             String sql = "select * from projeto where cd_projeto = ? ;";
             PreparedStatement con = Database.getConexao().prepareStatement(sql);
 
-            con.setInt(1, idProjeto);
+            con.setInt(1, id);
             ResultSet rs = con.executeQuery();
             Projeto prod = new Projeto();
 
@@ -82,6 +82,7 @@ public class ProjetoMetodos {
                 prod.setId(rs.getInt("cd_projeto"));
                 prod.setNome(rs.getString("nm_projeto"));
                 prod.setValorTotal(rs.getDouble("vl_total"));
+                prod.setIdUsuario(rs.getInt("cd_usuario"));
             }
             rs.close();
             con.close();
@@ -93,21 +94,22 @@ public class ProjetoMetodos {
         return null;
     }
 
-    public ArrayList<Projeto> procuraTodosProjetos() {
+    public ArrayList<Projeto> procuraTodosProjetos(int idUsuario) {
 
         try {
-            String sql = "select * from projeto;";
+            String sql = "select * from projeto where cd_usuario = ?;";
             PreparedStatement con = Database.getConexao().prepareStatement(sql);
-
+            con.setInt(1, idUsuario);
             ResultSet rs = con.executeQuery();
 
             ArrayList<Projeto> listaProjetos = new ArrayList<>();
-            while(rs.next()) {
+            while (rs.next()) {
                 Projeto prod = new Projeto();
 
                 prod.setId(rs.getInt("cd_projeto"));
                 prod.setNome(rs.getString("nm_projeto"));
                 prod.setValorTotal(rs.getDouble("vl_total"));
+                prod.setIdUsuario(rs.getInt("cd_usuario"));
 
                 listaProjetos.add(prod);
             }
@@ -118,16 +120,6 @@ public class ProjetoMetodos {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return null;
+        return null;    
     }
-    
-    public double calcularValorProjeto(Projeto Projeto) {
-        double valorHoraTrabalhada = Projeto.getHoraTrabalhada();
-        double tempoDedicado = Projeto.getTempoDedicadoProjeto();
-
-        double valorTotal = valorHoraTrabalhada * tempoDedicado;
-
-        return valorTotal;
-    }
-
 }

@@ -3,7 +3,9 @@
     Created on : 8 de jun. de 2023, 19:26:35
     Author     : carla
 --%>
-
+<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
+<%@page import="classes.Usuario"%>
+<%@page import="classes.Projeto"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -20,6 +22,7 @@
         <%@include file="WEB-INF/jspf/navbar.jspf"%>
 
         <div class="header3">
+            <h1>Seja bem vindo: ${usuario.login}</h1> 
             <h2>Meus Projetos</h2>
 
         </div>
@@ -29,10 +32,9 @@
             <!-- cabeçalho da tabela -->
             <tr bgcolor=#d8e2dc>
                 <th>#</th>
-                <th>Projetos</th>
-                <th>Prazo</th>
-                <th>Valor</th>
-                <th>Status</th>
+                <th>Nome do projeto</th>
+                <th>Valor Total</th>
+                <th>Ações</th>                
             </tr>
             <!--<tr>
                <th>Código</th>
@@ -41,28 +43,26 @@
                <th>Descrição</th>
             </tr>-->
             <!-- detalhes (corpo) da tabela -->
-            <tr align="left">
-                <td>1</td>
-                <td>PizzaPlanet</td>
-                <td>3 Semanas</td>
-                <td>R$ 3.500,00</td>
-                <td>Encerrado</td>
-            </tr>
-            <tr align="left">
-                <td>2</td>
-                <td>Estudante em Foco</td>
-                <td>4 Semanas</td>
-                <td>R$ 4.500,00</td>
-                <td>Em Andamento</td>
-            </tr>
-            <tr align="left">
-                <td>3</td>
-                <td>CMD Soluções Tecnológicas</td>
-                <td>2 Semanas</td>
-                <td>R$ 2.800,00</td>
-                <td>Em Andamento</td>
-            </tr>
+            <c:forEach var="projeto" items="${listaDeProjetos}">
+                <tr align="left">
+                    <td>${projeto.nome}</td>
+                    <td>${projeto.valorTotal}</td>
+                    <td>
+                        <form action="excluirproduto" method="post">
+                            <input type="hidden"  name="idProjeto" value="${projeto.id}"/>
+                            <input type="submit" class="btn btn-danger" value="Excluir produto"/>
+                        </form>    
+                        <form action="alterarproduto" method="get">
+                            <input type="hidden" name="idProjeto"  value="${projeto.id}"/>
+                            <input type="submit" class="btn btn-warning" value="Alterar Produto"/>
+                        </form>
+                    </td>
+                </tr>
+            </c:forEach>
+            
         </table>
+        <p style="color: red"> ${erro} </p>
+
         <br>
 
         <!-- <div class="w3-row w3-padding-64">

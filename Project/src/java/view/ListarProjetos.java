@@ -13,8 +13,10 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 import java.util.ArrayList;
 import model.Projeto;
+import model.Usuario;
 
 /**
  *
@@ -26,11 +28,27 @@ public class ListarProjetos extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        ProjetoMetodos dao = new ProjetoMetodos();
-        ArrayList<Projeto> listaDeProjetos = dao.procuraTodosProjetos();
+        HttpSession session = request.getSession();
+        Usuario usuario = (Usuario) session.getAttribute("usuario");
+
+        if (usuario != null) {
+            // Recupera o ID do usuário logado
+            int idUsuario = usuario.getId();
+
+            // Obtenha os projetos relacionados a esse usuário
+            ProjetoMetodos dao = new ProjetoMetodos();
+            ArrayList<Projeto> listaDeProjetos = dao.procuraTodosProjetos(idUsuario);
+
+            // Defina os projetos como um atributo da requisição
             request.setAttribute("listaDeProjetos", listaDeProjetos);
-        RequestDispatcher rd = request.getRequestDispatcher("listarProjetos.jsp");
-        rd.forward(request, response);
+
+            // Encaminhe para a página de exibição dos projetos
+            RequestDispatcher rd = request.getRequestDispatcher("/listarProjetos.jsp");
+            rd.forward(request, response);
+        } else {
+            // Se o usuário não estiver logado, redirecione para a página de login
+            response.sendRedirect("login.jsp");
+        }
     }
 
     @Override

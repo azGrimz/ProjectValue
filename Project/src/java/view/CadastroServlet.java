@@ -33,9 +33,11 @@ public class CadastroServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
          System.out.println("POST - CADASTRAR USUARIO");
-        Usuario u = new Usuario();
+       Usuario u = new Usuario();
         u.setSenha(request.getParameter("senha"));
         u.setNome(request.getParameter("usuario"));
+        u.setEmail(request.getParameter("email"));
+        u.setLogin(request.getParameter("login"));
 
         UsuarioMetodos dao = new UsuarioMetodos();
 
@@ -48,7 +50,6 @@ public class CadastroServlet extends HttpServlet {
             request.setAttribute("erro", "Usuário ou senha inválida!");
         }
         
-        response.sendRedirect("login");
-
+        response.sendRedirect("listarprojetos");
     }
 }
