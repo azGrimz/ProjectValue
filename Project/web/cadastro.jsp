@@ -1,8 +1,3 @@
-<%-- 
-    Document   : cadastro
-    Created on : May 22, 2023, 3:52:43 PM
-    Author     : zorin
---%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -33,7 +28,7 @@
   </div>
   <div class="col-md-6">
     <label for="inputPassword4" class="form-label">Nome de Usuário</label>
-    <input type="text" class="form-control" id="inputPassword4">
+    <input type="password" class="form-control" id="inputPassword4">
   </div>
 
  
@@ -44,11 +39,11 @@
  
   <div class="col-md-6">
     <label for="inputZip" class="form-label">Senha</label>
-    <input type="password" class="form-control" id="inputZip">
+    <input type="text" class="form-control" id="inputZip">
   </div>
  
   <div class="col-12">
-    <button type="submit" class="btn btn-primary">Cadastrar</button>
+      <a href="login.jsp"><button type="submit" class="btn" style="background: #fe7f2d" >Cadastre-se!</button></a>
   </div>
 </form>
             </div>

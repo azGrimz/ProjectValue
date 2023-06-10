@@ -18,14 +18,14 @@
             <h1 class="w3-margin w3-wide ">Organize seus projetos</h1>
             <h1 class="w3-margin w3-wide ">E deixe seu portifólio</h1>
             <h1 class="w3-margin w3-wide">muito mais atraente!</h1>
-            <!--<img src="https://unileao.edu.br/blog/wp-content/uploads/2018/09/remove-online-distractions.jpg"  width="300" height="260" id="imgpos">-->
-            <img src="https://img.freepik.com/vetores-gratis/pagina-inicial-do-web-design-dos-desenhos-animados_52683-70880.jpg?q=10&h=200"   id="imgpos">
+            <img src="Resources/images/project.png"  width="300" height="260" id="imgpos">
+            <!--<img src="https://img.freepik.com/vetores-gratis/pagina-inicial-do-web-design-dos-desenhos-animados_52683-70880.jpg?q=10&h=200"   id="imgpos">-->
         </div>
 
         <div class="header1 row g-5"><br><br>
-            <h1 class="w3-margin w3-wide ">Navegue pelo nosso portifólio</h1>
-            <br>
-            <h1 class="w3-margin w3-wide ">E conheça nossos projetos</h1>
+            <h1 class="w3-margin w3-wide ">Conheça a ProjectValue</h1>
+
+            <h1 class="w3-margin w3-wide "></h1>
         </div>
 
         <section>
@@ -68,28 +68,30 @@
                         <span class="visually-hidden">Next</span>
                     </button>
                 </div>
-            </div>
-        </section>
-
-        <section>
-             <div class="header2">
-                <h2 class="w3-margin w3-wide ">Comece agora</h2> 
-                <div class="form-center">
-                    <form class="row g-3" >
-                        <div class="col-auto">
-                            <label for="inputPassword2" class="visually-hidden">Email</label>
-                            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+                <br>
+                <div class="header1 row g-5"><br><br><br>
+                    <a href="about.jsp"><button class="btn me-md-2" style="background: #fe7f2d" type="button">Saiba Mais Sobre Nós!</button><a/>
+                        <br>
+                        <!--<h1 class="w3-margin w3-wide ">E conheça nossos projetos</h1>-->
                         </div>
 
-                        <div class="col-auto">
-                            <a href="cadastro.jsp"><button class="btn btn-primary me-md-2" type="button"> Inscreva-se!</button><a/>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </section>
-        <%@include file="WEB-INF/jspf/footer.jspf"%>
-        
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>     
-    </body>
-</html>
+                        </section>
+                        <section>
+                            <div class="header2">
+                                <h2 class="w3-margin w3-wide ">Comece agora!</h2> 
+                                <div class="form-center">
+
+
+
+                                    <div class="col-auto">
+                                        <a href="cadastro.jsp"><button class="btn me-md-2" style="background: #fe7f2d" type="button"> Inscreva-se!</button><a/>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </section>
+                        <%@include file="WEB-INF/jspf/footer.jspf"%>
+
+                        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>     
+                        </body>
+                        </html>

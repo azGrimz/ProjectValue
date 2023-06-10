@@ -1,8 +1,3 @@
-<%-- 
-    Document   : login
-    Created on : May 22, 2023, 3:53:48 PM
-    Author     : zorin
---%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <html lang="pt-BR">
@@ -17,11 +12,11 @@
     <%@include file="WEB-INF/jspf/navbar.jspf"%>
   <div class="main-login">
     <div class="left-login">
-      <h1>Seja muito bem-vindo!<br>Project Value</h1>
+      <h1>Seja muito bem-vindo!<!--<br>Project Value--></h1>
     </div>
     <div class="right-login">
       <div class="card-login">
-        <h1>LOGIN</h1>
+        <!--<h1>LOGIN</h1>-->
         <div class="textfield">
           <label for="usuario">Usuário</label>
           <input type="text" name="usuario">
@@ -30,8 +25,13 @@
           <label for="password">Senha</label>
           <input type="password" name="password">
         </div>
-        <button class="btn-login">Acessar</button>
-        <a href=""><strong>Cadastre-se!</strong></a>
+        <br>
+        <a href="projetos.jsp"><button type="submit" class="btn" style="background: #fe7f2d" >Acessar</button></a>
+        <br>
+        <a href="cadastro.jsp"><button type="submit" class="btn" style="background: #fe7f2d" >Cadastre-se!</button></a>
+        <!--<a href="projetos.jsp"><button class="btn-login" style="background: #ff9f1c">Acessar</button></a>
+        <a href="cadastro.jsp"><button class="btn-login" style="background: #ff9f1c">Cadastre-se</button></a>-->
+        <!--<a href=""><strong>Cadastre-se!</strong></a>-->
       </div>
     </div>
   </div>
