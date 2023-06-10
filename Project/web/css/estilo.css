@@ -1,8 +1,9 @@
 body,h1,h2,h3,h4,h5,h6 {
-    font-family: "Lato", sans-serif
+    /*font-family: "Lato", sans-serif;*/
+    font-family: "Charlie Display", sans-serif;
 }
 .w3-bar,h1,button {
-    font-family: "Montserrat", sans-serif
+    font-family: "Charlie Display", sans-serif
 }
 .fa-anchor,.fa-coffee {
     font-size:200px
@@ -16,6 +17,28 @@ body,h1,h2,h3,h4,h5,h6 {
     color: white;
     padding: 135px;
 }
+
+table2{
+    width: 50vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px;
+    /*align-items: center;    
+    margin-left: 50px;
+    right: 500px;*/
+
+}
+
+table{
+    width:50% !important;
+    border:3px;
+    /*align-content: center;*/
+    text-align: center;
+    margin: auto;
+
+}
 #imgpos {
     position:absolute;
     right: 200px;
@@ -24,6 +47,18 @@ body,h1,h2,h3,h4,h5,h6 {
     height: 300px;
     padding: 10px;
 }
+
+#img {
+    position:absolute;
+}
+
+.w3-sidebar {
+    z-index: 3;
+    width: 250px;
+    top: 43px;
+    bottom: 0;
+    height: inherit;
+}
 .header1 {
     height: 1px;
     background-color: white;
@@ -31,13 +66,29 @@ body,h1,h2,h3,h4,h5,h6 {
     color: black;
     padding: 1px;
 }
+.about{
+    font-family: "Charlie Display", sans-serif;
+    text-align: center;
+    top: 10px;
+}
+
+.about2 {
+    height: 100px;
+
+    /*background-color: red; /* For browsers that do not support gradients */
+    background: white;
+    text-align: left;
+    color: black;
+    padding: 135px;
+}
+
 .body{
     /*height: 500px;*/
     background-color: white; /* For browsers that do not support gradients */
-    top: 50px;
+    top: 30px;
     /*text-align: center;*/
     color: white;
-    padding: 300px;
+    padding: 200px;
 }
 .header2 {
     height: 400px;
@@ -46,7 +97,18 @@ body,h1,h2,h3,h4,h5,h6 {
     text-align: center;
     color: white;
     padding: 135px;
- }
+}
+
+.header3 {
+    height: 200px;
+    align-items: center;
+    /*background-image: linear-gradient(to right, purple, violet, pink);*/
+    background-image: linear-gradient(90deg, rgba(0,86,200,1) 19%, rgba(124,188,255,1) 84%);
+    text-align: center;
+    color: white;
+    padding: 135px;
+}
+
 .footer {
     height: 1px;
     background-color: rgb(9, 30, 66);
@@ -76,12 +138,12 @@ body,h1,h2,h3,h4,h5,h6 {
 }
 
 .main-cadastro {
-  width: 100vw;
-  height: 100vh;
-  background:  azure;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    width: 100%;
+    height: 100vh;
+    background:  white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .header-cadastro {
     height: 500px;
@@ -92,55 +154,125 @@ body,h1,h2,h3,h4,h5,h6 {
 }
 
 .left-cadastro {
-  width: 50vw;
-  height: 50vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+    width: 50vw;
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 .left-cadastro > h1 {
-  color: cornflowerblue;
-  font-size: 2.5vw;
+    color: cornflowerblue;
+    font-size: 2.5vw;
 }
 
 .right-cadastro {
-  width: 50vw;
-  height: 80vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    width: 50vw;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .card-cadastro {
-  /*width: 60%;*/
-  width: 100%;
-  height: 40%;
-  padding: 16px 0;
-  margin: 100px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  /*padding: 30px 35px;*/
-  background: cornflowerblue;
-  border-radius: 20px;
-  box-shadow: 0px 10px 40px #00000056;
+    /*width: 60%;*/
+    width: 100%;
+    height: 40%;
+    padding: 16px 0;
+    margin: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    /*padding: 30px 35px;*/
+    background: cornflowerblue;
+    border-radius: 20px;
+    box-shadow: 0px 10px 40px #00000056;
 }
 
 .btn-cadastro {
-  width: 100%;
-  padding: 16px 0;
-  margin: 25px;
-  border: none;
-  border-radius: 8px;
-  outline: none;
-  text-transform: uppercase;
-  font-weight: 800;
-  letter-spacing: 3px;
-  color: #2b134b;
-  background: #00ff88;
-  cursor: pointer;
-  box-shadow: 0px 10px 40px -12px #00ff8052;
+    width: 100%;
+    padding: 16px 0;
+    margin: 25px;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: 3px;
+    color: #2b134b;
+    background: #00ff88;
+    cursor: pointer;
+    box-shadow: 0px 10px 40px -12px #00ff8052;
+}
+.headerabout {
+    height: 950px;
+    /*background: azure;*/
+    
+    
+    /*text-align: left;*/
+    color: black;
+    padding: 135px;
+    /*margin:50px;*/
+
+}
+
+.headerabout2 {
+    height: 1400px;
+    background: white;
+    /*background: linear-gradient(90deg, rgba(0,86,200,1) 19%, rgba(124,188,255,1) 84%);#90e0ef, #0077b6 ,*/
+    /*text-align: left;*/
+    color: black;
+    padding: 135px;
+    
+
+}
+.textabout {
+    text-align: center;
+}
+
+#imgpos2 {
+    position:absolute;
+    right: 300px;
+    top: 700px;
+    width: 150px;
+    height: 150px;
+    padding: 10px;
+}
+
+#imgpos3 {
+    position:absolute;
+    right: 300px;
+    top: 900px;
+    width: 150px;
+    height: 150px;
+    padding: 10px;
+}
+
+#imgpos4 {
+    position:absolute;
+    right: 300px;
+    top: 1075px;
+    width: 150px;
+    height: 150px;
+    padding: 10px;
+}
+
+#imgpos5 {
+    position:absolute;
+    right: 300px;
+    top: 1275px;
+    width: 150px;
+    height: 150px;
+    padding: 10px;
+}
+
+#imgpos6 {
+    position:absolute;
+    right: 300px;
+    top: 1475px;
+    width: 150px;
+    height: 150px;
+    padding: 10px;
 }
