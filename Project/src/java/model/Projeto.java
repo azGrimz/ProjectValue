@@ -15,12 +15,20 @@ public class Projeto {
     private double horaTrabalhada;
     private double tempoDedicadoProjeto;
     private int idUsuario;
+    private String status;
+    private String datainicio;
+    private String datafim;
+    private long prazoDias;
 
-    public Projeto(String nome, double horaTrabalhada, double tempoDedicadoProjeto, int idUsuario) {
+    public Projeto(String nome, double horaTrabalhada, double tempoDedicadoProjeto, int idUsuario, String status, String datainicio, String datafim, long prazoDias) {
         this.nome = nome;
         this.horaTrabalhada = horaTrabalhada;
         this.tempoDedicadoProjeto = tempoDedicadoProjeto;
         this.idUsuario = idUsuario;
+        this.status = status;
+        this.datainicio = datainicio;
+        this.datafim = datafim;
+        this.prazoDias = prazoDias;
     }
 
     public int getId() {
@@ -55,11 +63,11 @@ public class Projeto {
         this.valorTotal = valorTotal;
     }
 
-    public void setHoraTrabalhada(int horaTrabalhada) {
+    public void setHoraTrabalhada(double horaTrabalhada) {
         this.horaTrabalhada = horaTrabalhada;
     }
 
-    public void setTempoDedicadoProjeto(int tempoDedicadoProjeto) {
+    public void setTempoDedicadoProjeto(double tempoDedicadoProjeto) {
         this.tempoDedicadoProjeto = tempoDedicadoProjeto;
     }
 
@@ -69,6 +77,38 @@ public class Projeto {
 
     public void setNome(String nome) {
         this.nome = nome;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public String getDatainicio() {
+        return datainicio;
+    }
+
+    public void setDatainicio(String datainicio) {
+        this.datainicio = datainicio;
+    }
+
+    public String getDatafim() {
+        return datafim;
+    }
+
+    public void setDatafim(String datafim) {
+        this.datafim = datafim;
+    }
+
+    public long getPrazoDias() {
+        return prazoDias;
+    }
+
+    public void setPrazoDias(long prazoDias) {
+        this.prazoDias = prazoDias;
     }
 
     public Projeto() {
@@ -83,6 +123,10 @@ public class Projeto {
                 + ", horaTrabalhada=" + horaTrabalhada
                 + ", tempoDedicadoProjeto=" + tempoDedicadoProjeto
                 + ", idUsuario=" + idUsuario
+                + ", status=" + status
+                + ", datainicio=" + datainicio
+                + ", datafim=" + datafim
+                + ", prazoDias=" + prazoDias
                 + '}';
     }
 }
