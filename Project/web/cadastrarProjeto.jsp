@@ -13,31 +13,30 @@
         <link rel="stylesheet" href="Resources/css/Loja.css">
         <title>Cadastrar novo produto</title>
     </head>
-    <div class="row">
-        <div class="col-md-12">
-            <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-                <a class="navbar-brand" href="loja">Loja</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
 
-                <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-                    <ul class="navbar-nav mr-auto">
-                        <li class="nav-item active">
-                            <a class="nav-link" href="listarprojetos">Produtos <span class="sr-only">(current)</span></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="cadastrarprojeto">Novo produto</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="relatoriodevendas">Relatório de Vendas</a>
-                        </li>
-                    </ul>
+    <body>
+        <div class="row">
+            <div class="col-md-12">
+                <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+                    <a class="navbar-brand" href="loja">Loja</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
 
-                </div>
-            </nav>
+                    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+                        <ul class="navbar-nav mr-auto">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="listarprojetos">Produtos <span class="sr-only">(current)</span></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="cadastrarprojeto">Novo Projeto</a>
+                            </li>
+                        </ul>
+
+                    </div>
+                </nav>
+            </div>
         </div>
-    </div>
     <body style="background-color: #eee" >
         <div class="centralizar-pagina">
             <div class="row ">
@@ -54,7 +53,13 @@
                             </div>
                             <div class="form-group">
                                 <input class="form-control" type="number" name="tempodedicado" placeholder="Digite o valor do tempo dedicado no projeto"/>                        
-                            </div>                            
+                            </div>  
+                            <div class="form-group">
+                                <input class="form-control" type="date" name="datainicio"/>                        
+                            </div> 
+                            <div class="form-group">
+                                <input class="form-control" type="date" name="datafim"/>                        
+                            </div> 
                             <input  type="submit" class="btn btn-sucess " name="btnEnviar" value="Enviar">
 
                         </form>
