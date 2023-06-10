@@ -1,28 +1,21 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Servlet.java to edit this template
- */
 package view;
 
-import model.Usuario;
-import controller.UsuarioMetodos;
-import jakarta.servlet.RequestDispatcher;
 import java.io.IOException;
-import java.io.PrintWriter;
+import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import model.Usuario;
+import controller.UsuarioMetodos;
 import jakarta.servlet.http.HttpSession;
 
-/**
- *
- * @author Desenvolvedor
- */
+
 @WebServlet(name = "LoginServlet", urlPatterns = {"/login"})
-public class LoginServlet extends HttpServlet {
- @Override
+public class Login extends HttpServlet {
+
+    @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         RequestDispatcher dispatcher = getServletContext()
@@ -59,4 +52,5 @@ public class LoginServlet extends HttpServlet {
     public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
+
 }
