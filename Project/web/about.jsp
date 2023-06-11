@@ -38,8 +38,8 @@
                         Back-End. Vim da Etec e agora estou aprimorando<br> meus conhecimentos na Fatec.</p>            
                     <img src="Resources/images/pedro.jpeg"  class="w3-circle w3-right" id="imgpos4">
                     <br><br>
-                    <p><strong>Raphael Santos</strong> Comecei a me aventurar no mundo 
-                        <br>  da tecnologia recentemente e estou buscando <br> evoluir nessa área desde a pandemia.</p>            
+                    <p><strong>Raphael Santos</strong> Formado em Ciências Contábeis em 2016, 
+                        <br> estou buscando adquirir conhecimento necessário para <br> evoluir nessa área desde a pandemia.</p>            
                     <img src="Resources/images/raphael.jpeg"  class="w3-circle w3-right" id="imgpos5">
                     <br><br>
                     <p><strong>Victória Cabral</strong> Sempre me interessei pela área da<br> 
