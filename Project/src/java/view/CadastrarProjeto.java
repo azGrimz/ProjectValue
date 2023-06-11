@@ -24,7 +24,7 @@ import java.time.temporal.ChronoUnit;
 @WebServlet(name = "CadastrarProjeto", urlPatterns = {"/cadastrarprojeto"})
 public class CadastrarProjeto extends HttpServlet {
 
-       @Override
+    @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         RequestDispatcher dispatcher = getServletContext()
@@ -37,7 +37,7 @@ public class CadastrarProjeto extends HttpServlet {
             throws ServletException, IOException {
         System.out.println("POST - CADASTRAR PROJETO");
         request.setCharacterEncoding("UTF-8");
-        
+
         Projeto u = new Projeto();
         u.setNome(request.getParameter("nome"));
         u.setHoraTrabalhada(Double.parseDouble(request.getParameter("horatrabalhada")));
@@ -47,12 +47,12 @@ public class CadastrarProjeto extends HttpServlet {
         u.setDatafim(request.getParameter("datafim"));
         String page = "home.jsp";
 
-       long prazoStatus = calcularPrazoEStatus(u);
+        long prazoStatus = calcularPrazoEStatus(u);
         u.setPrazoDias(prazoStatus);
 
         double valorTotal = calcularValorTotal(u, prazoStatus);
         u.setValorTotal(valorTotal);
-        
+
         ProjetoMetodos dao = new ProjetoMetodos();
         if (dao.cadastraProjeto(u)) {
 
@@ -64,7 +64,7 @@ public class CadastrarProjeto extends HttpServlet {
         }
         ;
     }
-    
+
     public long calcularPrazoEStatus(Projeto p) {
         LocalDate dataInicio = LocalDate.parse(p.getDatainicio());
         LocalDate dataFim = LocalDate.parse(p.getDatafim());
@@ -79,9 +79,9 @@ public class CadastrarProjeto extends HttpServlet {
         long prazoDias = ChronoUnit.DAYS.between(dataInicio, dataFim);
         return prazoDias;
     }
-    
+
     public double calcularValorTotal(Projeto p, long prazoDias) {
-        double valorTotal = p.getHoraTrabalhada()* p.getTempoDedicadoProjeto() * (double) prazoDias;
+        double valorTotal = p.getHoraTrabalhada() * p.getTempoDedicadoProjeto() * (double) prazoDias;
         return valorTotal;
     }
 }

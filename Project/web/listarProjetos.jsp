@@ -22,7 +22,7 @@
         <%@include file="WEB-INF/jspf/navbarusuario.jspf"%>
 
         <div class="header3">
-            <h1>Seja bem vindo: ${usuario.login}</h1> 
+            <h1>Seja bem vindo(a): ${usuario.login}</h1> 
             <h2>Meus Projetos</h2>
 
         </div>
@@ -31,10 +31,10 @@
         <table class="table table-bordered">
             <!-- cabeçalho da tabela -->
             <tr bgcolor=#d8e2dc>
-                
+
                 <th>Nome do projeto</th>
                 <th>Valor Total</th>
-                <th>Ações</th>                
+                <th>Ação</th>                
             </tr>
             <!--<tr>
                <th>Código</th>
@@ -45,32 +45,32 @@
             <!-- detalhes (corpo) da tabela -->
             <c:forEach var="projeto" items="${listaDeProjetos}">
                 <tr align="left">
-                    
+
                     <td>${projeto.nome}</td>
                     <td>${projeto.valorTotal}</td>
                     <td>
                 <center>
-                        <form action="excluirprojeto" method="post">
-                            <input type="hidden"  name="idProjeto" value="${projeto.id}"/>
-                            <input type="submit" class="btn btn-danger" value="Excluir Projeto"/>
-                        </form>    
-                        <!--<form action="alterarprojeto" method="get">
-                            <input type="hidden" name="idProjeto"  value="${projeto.id}"/>
-                            <input type="submit" class="btn btn-primary" value="Alterar Projeto"/>
-                        </form>-->
+                    <form action="excluirprojeto" method="post">
+                        <input type="hidden"  name="idProjeto" value="${projeto.id}"/>
+                        <input type="submit" class="btn btn-danger" value="Excluir Projeto"/>
+                    </form>    
+                    <!--<form action="alterarprojeto" method="get">
+                        <input type="hidden" name="idProjeto"  value="${projeto.id}"/>
+                        <input type="submit" class="btn btn-primary" value="Alterar Projeto"/>
+                    </form>-->
                 </center>
-                    </td>
-                </tr>
-            </c:forEach>
-            
-        </table>
-        <p style="color: red"> ${erro} </p>
+            </td>
+        </tr>
+    </c:forEach>
 
-        <br>
+</table>
+<p style="color: red"> ${erro} </p>
 
-        
+<br>
 
 
-    
+
+
+
 </body>
 </html>

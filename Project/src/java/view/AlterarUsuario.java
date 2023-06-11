@@ -14,7 +14,7 @@ import jakarta.servlet.http.HttpServletResponse;
 @WebServlet(name = "AlterarUsuario", urlPatterns = {"/alterarusuario"})
 public class AlterarUsuario extends HttpServlet {
 
-   @Override
+    @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
@@ -27,11 +27,12 @@ public class AlterarUsuario extends HttpServlet {
                 .getRequestDispatcher("/alterarusuario.jsp");
         dispatcher.forward(request, response);
     }
+
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-         System.out.println("POST - ALTERAR USUARIO");
-         
+        System.out.println("POST - ALTERAR USUARIO");
+
         Usuario u = new Usuario();
         int idUsuario = Integer.parseInt(request.getParameter("idUsuario"));
         u.setId(idUsuario);
@@ -40,7 +41,7 @@ public class AlterarUsuario extends HttpServlet {
         u.setNome(request.getParameter("nome"));
         u.setEmail(request.getParameter("email"));
 
-        UsuarioMetodos dao = new UsuarioMetodos();        
+        UsuarioMetodos dao = new UsuarioMetodos();
         if (dao.alteraUsuario(u)) {
             request.setAttribute("usuario", u);
             response.sendRedirect("listarprojetos");

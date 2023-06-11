@@ -36,11 +36,11 @@
                     <input class="form-control" type="number" name="tempodedicado" placeholder="Digite o valor do tempo dedicado"/>                        
                 </div>  
                 <div class="form-group" style="padding-bottom:25px">
-                    <p>Data Início</p>
+                    <b><p>Data Início</p></b>
                     <input class="form-control" type="date" name="datainicio"/>                        
                 </div> 
                 <div class="form-group" style="padding-bottom:25px">
-                    <p>Data Fim</p>
+                    <b><p>Data Fim</p></b>
                     <input class="form-control" type="date" name="datafim"/>                        
                 </div> 
                 <input  type="submit" class="btn btn-sucess " style="background: #fe7f2d; color:white" name="btnEnviar" value="Enviar">
@@ -48,7 +48,7 @@
         </div>
     </center> 
     <p style="color: red"> ${erro} </p>
-    
+
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>     
 

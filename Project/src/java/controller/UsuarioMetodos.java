@@ -10,6 +10,7 @@ import java.util.logging.Logger;
 import model.Usuario;
 
 public class UsuarioMetodos {
+
     public boolean cadastraUsuario(Usuario usuario) {
         String insertTableSQL = "INSERT INTO usuario" + "(nm_usuario, nm_senha, nm_email, login) VALUES" + "(?,?,?,?) ;";
         PreparedStatement preparedStatement;
@@ -32,7 +33,7 @@ public class UsuarioMetodos {
                 + "WHERE cd_usuario = ? ;";
         PreparedStatement preparedStatement;
         try {
-            preparedStatement = Database.getConexao().prepareStatement(insertTableSQL);            
+            preparedStatement = Database.getConexao().prepareStatement(insertTableSQL);
             preparedStatement.setString(1, usuario.getNome());
             preparedStatement.setString(2, usuario.getSenha());
             preparedStatement.setString(3, usuario.getEmail());
@@ -87,20 +88,20 @@ public class UsuarioMetodos {
         return null;
     }
 
-    public boolean validar(Usuario u){
+    public boolean validar(Usuario u) {
         try {
             //con: referência para a conexão com o banco
             Connection con = Database.getConexao();
             String sql = "select * from usuario where login = ? and nm_senha = ?";
-            
+
             //executar o sql
             PreparedStatement ps = con.prepareStatement(sql);
             ps.setString(1, u.getLogin());
             ps.setString(2, u.getSenha());
-            
+
             //representa o resultado do SQL
             ResultSet rs = ps.executeQuery();
-            if(rs.first()){
+            if (rs.first()) {
                 return true;
             }
         } catch (SQLException ex) {

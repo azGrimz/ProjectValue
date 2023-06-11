@@ -27,11 +27,11 @@
 
                 <div class="headerabout">            
                     <p><strong>Bianca Drumond</strong> Formada em Engenharia Civil em<br>
-                         2018, me interessei em aprender sobre tecnologia<br>  durante a pandemia.</p>            
+                        2018, me interessei em aprender sobre tecnologia<br>  durante a pandemia.</p>            
                     <img src="Resources/images/bianca.jpeg"  class="w3-circle w3-right" id="imgpos2">
                     <br><br>
                     <p><strong>Carla Sanz</strong> Formada em Administração de Empresas<br>
-                         em 2015, resolvi me aventurar nesse mundo da<br> tecnologia em 2020.</p>            
+                        em 2015, resolvi me aventurar nesse mundo da<br> tecnologia em 2020.</p>            
                     <img src="Resources/images/carla.jpeg"  class="w3-circle w3-right" id="imgpos3">
                     <br><br>
                     <p><strong>Pedro Vinícius</strong> Me interesso muito pela parte do <br>

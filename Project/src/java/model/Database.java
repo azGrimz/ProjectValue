@@ -9,7 +9,8 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class Database {
-     public static Connection getConexao() {
+
+    public static Connection getConexao() {
         Connection con = null;
         try {
             String serverName = "localhost";

@@ -15,12 +15,14 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.http.HttpSession;
+
 /**
  *
  * @author Desenvolvedor
  */
 @WebServlet(name = "CadastroServlet", urlPatterns = {"/cadastrarusuario"})
 public class CadastroServlet extends HttpServlet {
+
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -32,7 +34,7 @@ public class CadastroServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-         System.out.println("POST - CADASTRAR USUARIO");
+        System.out.println("POST - CADASTRAR USUARIO");
         Usuario u = new Usuario();
         u.setSenha(request.getParameter("senha"));
         u.setNome(request.getParameter("usuario"));
@@ -44,12 +46,12 @@ public class CadastroServlet extends HttpServlet {
         if (dao.cadastraUsuario(u)) {
             request.setAttribute("usuario", u);
             HttpSession ses = request.getSession();
-            ses.setAttribute("usuario",u);
+            ses.setAttribute("usuario", u);
         } else {
             //enviar um atributo msg de erro
             request.setAttribute("erro", "Usuário ou senha inválida!");
         }
-        
+
         response.sendRedirect("listarprojetos");
     }
 }

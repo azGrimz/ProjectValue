@@ -50,12 +50,12 @@ public class ListarProjetos extends HttpServlet {
             // Se o usuário não estiver logado, redirecione para a página de login
             response.sendRedirect("login.jsp");
         }
-        
+
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-         System.out.println("POST - CADASTRAR USUARIO");
+        System.out.println("POST - CADASTRAR USUARIO");
     }
 }

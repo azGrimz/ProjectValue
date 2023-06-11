@@ -32,10 +32,10 @@ public class ExcluirProjeto extends HttpServlet {
 
         Projeto u = new Projeto();
         u.setId(Integer.parseInt(request.getParameter("idProjeto")));
-        
+
         ProjetoMetodos dao = new ProjetoMetodos();
 
-        dao.excluiProjeto(u.getId());        
+        dao.excluiProjeto(u.getId());
         response.sendRedirect("listarprojetos");
     }
 }

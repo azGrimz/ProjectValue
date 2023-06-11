@@ -38,21 +38,21 @@
                     </div>
                     <div class="carousel-inner">
                         <div class="carousel-item active">
-                            <img src="https://i.ytimg.com/vi/-qIKXW6fqF8/maxresdefault.jpg" class="d-block w-100" width="400" height="500">
+                            <img src="Resources/images/carrossel1.png" class="d-block w-100" width="200" height="600">
                             <!--<div class="carousel-caption d-none d-md-block">
                                 <h5>First slide label</h5>
                                 <p>Some representative placeholder content for the first slide.</p>
                             </div>-->
                         </div>
                         <div class="carousel-item">
-                            <img src="https://www.vandelaydesign.com/wp-content/uploads/coroflot.jpg" class="d-block w-100" width="400" height="500" >
+                            <img src="Resources/images/carrossel2.png" class="d-block w-100" width="200" height="600" >
                             <!--<div class="carousel-caption d-none d-md-block">
                                 <h5>Second slide label</h5>
                                 <p>Some representative placeholder content for the second slide.</p>
                             </div>-->
                         </div>
                         <div class="carousel-item">
-                            <img src="https://www.hostinger.com/tutorials/wp-content/uploads/sites/2/2021/08/behance-moodboard.webp" class="d-block w-100" width="400" height="500">
+                            <img src="Resources/images/carrossel3.png" class="d-block w-100" width="200" height="600">
                             <!--<div class="carousel-caption d-none d-md-block">
                                 <h5>Third slide label</h5>
                                 <p>Some representative placeholder content for the third slide.</p>
