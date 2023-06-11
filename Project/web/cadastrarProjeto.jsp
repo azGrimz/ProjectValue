@@ -36,9 +36,11 @@
                     <input class="form-control" type="number" name="tempodedicado" placeholder="Digite o valor do tempo dedicado"/>                        
                 </div>  
                 <div class="form-group" style="padding-bottom:25px">
+                    <p>Data Início</p>
                     <input class="form-control" type="date" name="datainicio"/>                        
                 </div> 
                 <div class="form-group" style="padding-bottom:25px">
+                    <p>Data Fim</p>
                     <input class="form-control" type="date" name="datafim"/>                        
                 </div> 
                 <input  type="submit" class="btn btn-sucess " style="background: #fe7f2d; color:white" name="btnEnviar" value="Enviar">

@@ -54,10 +54,10 @@
                             <input type="hidden"  name="idProjeto" value="${projeto.id}"/>
                             <input type="submit" class="btn btn-danger" value="Excluir Projeto"/>
                         </form>    
-                        <form action="alterarprojeto" method="get">
+                        <!--<form action="alterarprojeto" method="get">
                             <input type="hidden" name="idProjeto"  value="${projeto.id}"/>
                             <input type="submit" class="btn btn-primary" value="Alterar Projeto"/>
-                        </form>
+                        </form>-->
                 </center>
                     </td>
                 </tr>
