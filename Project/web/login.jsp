@@ -17,6 +17,8 @@
     <div class="right-login">
       <div class="card-login">
         <!--<h1>LOGIN</h1>-->
+                <form action="login" method="POST">
+
         <div class="textfield">
           <label for="usuario">Usuário</label>
           <input type="text" name="usuario" value="${param.usuario}" placeholder="Usuário" autofocus>
@@ -32,6 +34,8 @@
         <!--<a href="projetos.jsp"><button class="btn-login" style="background: #ff9f1c">Acessar</button></a>
         <a href="cadastro.jsp"><button class="btn-login" style="background: #ff9f1c">Cadastre-se</button></a>-->
         <!--<a href=""><strong>Cadastre-se!</strong></a>-->
+                </form>
+
       </div>
     </div>
   </div>

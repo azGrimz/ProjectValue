@@ -21,7 +21,7 @@
 
             <div class="card-cadastro">
                 <div class="right-cadastro">
-                    <form class="row g-3" >
+                    <form class="row g-3" action="cadastrarusuario" method="POST">
                         <div class="col-md-6">
                             <label for="inputEmail4" class="form-label" >Nome</label>
                             <input type="text" class="form-control"name="usuario"  id="inputEmail4">
