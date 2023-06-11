@@ -4,8 +4,8 @@
     Author     : carla
 --%>
 <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
-<%@page import="classes.Usuario"%>
-<%@page import="classes.Projeto"%>
+<%@page import="model.Usuario"%>
+<%@page import="model.Projeto"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -19,7 +19,7 @@
         <title>Projetos</title>
     </head>
     <body>
-        <%@include file="WEB-INF/jspf/navbar.jspf"%>
+        <%@include file="WEB-INF/jspf/navbarusuario.jspf"%>
 
         <div class="header3">
             <h1>Seja bem vindo: ${usuario.login}</h1> 
@@ -45,17 +45,20 @@
             <!-- detalhes (corpo) da tabela -->
             <c:forEach var="projeto" items="${listaDeProjetos}">
                 <tr align="left">
+                    <td>${projeto.id}</td>
                     <td>${projeto.nome}</td>
                     <td>${projeto.valorTotal}</td>
                     <td>
+                <center>
                         <form action="excluirproduto" method="post">
                             <input type="hidden"  name="idProjeto" value="${projeto.id}"/>
-                            <input type="submit" class="btn btn-danger" value="Excluir produto"/>
+                            <input type="submit" class="btn btn-danger" value="Excluir Projeto"/>
                         </form>    
                         <form action="alterarproduto" method="get">
                             <input type="hidden" name="idProjeto"  value="${projeto.id}"/>
-                            <input type="submit" class="btn btn-warning" value="Alterar Produto"/>
+                            <input type="submit" class="btn btn-primary" value="Alterar Projeto"/>
                         </form>
+                </center>
                     </td>
                 </tr>
             </c:forEach>
@@ -65,42 +68,7 @@
 
         <br>
 
-        <!-- <div class="w3-row w3-padding-64">
-             <div class="w3-twothird w3-container">
-                 <h1 class="w3-text-blue">Heading</h1>
-                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum
-                     dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-             </div>
-             <div class="w3-third w3-container">
-                 <p class="w3-border w3-padding-large w3-padding-32 w3-center">AD</p>
-                 <p class="w3-border w3-padding-large w3-padding-64 w3-center">AD</p>
-             </div>
-         </div>
-
-         <div class="w3-row">
-             <div class="w3-twothird w3-container">
-                 <h1 class="w3-text-blue">Heading</h1>
-                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum
-                     dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-             </div>
-             <div class="w3-third w3-container">
-                 <p class="w3-border w3-padding-large w3-padding-32 w3-center">AD</p>
-                 <p class="w3-border w3-padding-large w3-padding-64 w3-center">AD</p>
-             </div>
-         </div>
-
-         <div class="w3-row w3-padding-64">
-             <div class="w3-twothird w3-container">
-                 <h1 class="w3-text-blue">Heading</h1>
-                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum
-                     dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-             </div>
-             <div class="w3-third w3-container">
-                 <p class="w3-border w3-padding-large w3-padding-32 w3-center">AD</p>
-                 <p class="w3-border w3-padding-large w3-padding-64 w3-center">AD</p>
-             </div>
-         </div>-->
-    </div>
+        
 
 
     <%@include file="WEB-INF/jspf/footer.jspf"%>

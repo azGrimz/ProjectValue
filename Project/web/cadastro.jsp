@@ -39,7 +39,7 @@
 
                         <div class="col-md-6">
                             <label for="inputZip" class="form-label">Senha</label>
-                            <input type="text" class="form-control" name="senha" id="inputZip">
+                            <input type="password" class="form-control" name="senha" id="inputZip">
                         </div>
 
 

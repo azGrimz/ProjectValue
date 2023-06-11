@@ -18,10 +18,10 @@
         <title>Meu Perfil</title>
     </head>
     <body>
-        <%@include file="WEB-INF/jspf/navbar.jspf"%>
+        <%@include file="WEB-INF/jspf/navbarusuario.jspf"%>
 
         <header class="w3-container w3-center" style="padding:128px 16px; background: linear-gradient(90deg, rgba(0,86,200,1) 19%, rgba(124,188,255,1) 84%);">
-            <h1 class="w3-margin w3-jumbo" style="color:white">Olá, fulano</h1>
+            <h1 class="w3-margin w3-jumbo" style="color:white">Olá, ${usuario.login}</h1>
             <p class="w3-xlarge" style="color:white">Estamos muito felizes que tenha se inscrito na ProjectValue. É um prazer ajudá-lo em seus projetos.</p>
             <p class="w3-xlarge" style="color:white">O que deseja fazer?</p>
             <!--<button class="w3-button w3-black w3-padding-large w3-large w3-margin-top">Get Started</button>-->

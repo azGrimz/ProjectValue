@@ -14,7 +14,7 @@
         <title>Alterar Cadastro</title>
     </head>
     <body>
-        <%@include file="WEB-INF/jspf/navbar.jspf"%>
+        <%@include file="WEB-INF/jspf/navbarusuario.jspf"%>
         <div class="main-cadastro">    
             <div class="left-cadastro">
 
