@@ -194,10 +194,10 @@
                             <a class="nav-link" aria-current="page" href="about.jsp">Sobre Nós</a>
                         </li>  
                         <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="listarProjeto.jsp">Meus Projetos</a>
+                            <a class="nav-link" aria-current="page" href="perfil.jsp">Meu Perfil</a>
                         </li>  
                         <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="cadastrarProjeto.jsp">Cadastrar Projeto</a>
+                            <a class="nav-link" aria-current="page" href="cadastrarprojeto">Cadastrar Projeto</a>
                         </li> 
                         <li class="nav-item">
                             <a class="nav-link" aria-current="page" href="alterarCadastro.jsp">Alterar Cadastro</a>

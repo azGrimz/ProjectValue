@@ -31,8 +31,8 @@
         <div class="w3-row-padding w3-padding-64 w3-container">
             <div class="w3-content">
                 <div class="w3-twothird">
-                    <h5 class="w3-padding-32"> ➥️‍ Deseja visualizar seus projetos? <a href="ListarProjeto.jsp"><button class="btn btn-primary me-md-2" type="button" style="margin-left: 35px"> Clique aqui!</button><a/></h5>
-                    <h5 class="w3-padding-32"> ➥ Deseja cadastrar um novo projeto? <a href="CadastrarProjeto.jsp"><button class="btn btn-primary me-md-2" type="button" style="margin-left: 11px"> Clique aqui!</button><a/></h5>
+                    <h5 class="w3-padding-32"> ➥️‍ Deseja visualizar seus projetos? <a href="listarprojetos"><button class="btn btn-primary me-md-2" type="button" style="margin-left: 35px"> Clique aqui!</button><a/></h5>
+                    <h5 class="w3-padding-32"> ➥ Deseja cadastrar um novo projeto? <a href="cadastrarprojeto"><button class="btn btn-primary me-md-2" type="button" style="margin-left: 11px"> Clique aqui!</button><a/></h5>
                     <h5 class="w3-padding-32"> ➥ Deseja alterar seu cadastro? <a href="alterarCadastro.jsp"><button class="btn btn-primary me-md-2" type="button" style="margin-left: 63px"> Clique aqui!</button><a/></h5>
                 </div>
                 <div class="w3-third w3-center">
@@ -41,7 +41,7 @@
             </div>
         </div>   
 
-        <%@include file="WEB-INF/jspf/footer.jspf"%>
+        
 
         <!-- <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
          <a class="navbar-brand" href="loja">Loja</a>
