@@ -2,9 +2,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Servlet.java to edit this template
  */
-package view;
+package web;
 
-import controller.ProjetoMetodos;
+import Metodos.ProjetoMetodos;
 import jakarta.servlet.RequestDispatcher;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -13,10 +13,10 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import jakarta.servlet.http.HttpSession;
 import java.util.ArrayList;
-import model.Projeto;
-import model.Usuario;
+import classes.Projeto;
+import classes.Usuario;
+import jakarta.servlet.http.HttpSession;
 
 /**
  *
@@ -28,6 +28,7 @@ public class ListarProjetos extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+
         HttpSession session = request.getSession();
         Usuario usuario = (Usuario) session.getAttribute("usuario");
 
@@ -49,6 +50,7 @@ public class ListarProjetos extends HttpServlet {
             // Se o usuário não estiver logado, redirecione para a página de login
             response.sendRedirect("login.jsp");
         }
+        
     }
 
     @Override
