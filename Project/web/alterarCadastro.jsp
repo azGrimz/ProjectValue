@@ -26,26 +26,27 @@
             <div class="card-cadastro" style="height: 400px">
                 <div class="right-cadastro">
                     <center>
-                        <form class="row g-3" action="cadastrarusuario" method="POST" style="width: 800px">
+                        <form class="row g-3" action="alterarusuario" method="POST" style="width: 800px">
                             <div class="col-md-6">
-                                <label for="inputEmail4" class="form-label" >Nome</label>
-                                <input type="text" class="form-control"name="usuario"  id="inputEmail4">
+                                <input type="number" name="idUsuario" value="${usuario.id}"placeholder="Informe sua identificacao"/>
+                                <label for="inputEmail4" class="form-label" >Nome de Usuário</label>
+                                <input class="form-control" type="text" value="${projeto.usuario}" name="usuario" placeholder="Digite o novo nome de usuario" autofocus/>
                             </div>
                             <div class="col-md-6">
-                                <label for="inputPassword4" class="form-label">Nome de Usuário</label>
-                                <input type="text" class="form-control" name="login" id="inputPassword4">
+                                <label for="inputPassword4" class="form-label">Nome</label>
+                                <input class="form-control" type="text" value="${projeto.nome}" name="nome" placeholder="Atualizar o nome"/>   
                             </div>
-
+                            <div class="col-md-6">
+                                <label for="inputZip" class="form-label">Senha</label>
+                                <input class="form-control" type="password" value="${projeto.senha}" name="senha" placeholder="Digite a nova senha"/>      
+                            </div>
 
                             <div class="col-md-6">
                                 <label for="inputCity" class="form-label">E-mail</label>
-                                <input type="text" class="form-control" name="email" id="inputCity">
+                                <input class="form-control" type="text" value="${projeto.email}" name="email" placeholder="Digite o novo email"/>   
                             </div>
 
-                            <div class="col-md-6">
-                                <label for="inputZip" class="form-label">Senha</label>
-                                <input type="password" class="form-control" name="senha" id="inputZip">
-                            </div>
+
 
 
                             <div class="col-12">

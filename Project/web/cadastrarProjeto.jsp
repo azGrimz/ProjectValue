@@ -14,10 +14,6 @@
         <title>Cadastrar novo projeto</title>
     </head>
 
-
-
-
-
     <body style="background-color: #eee" >
         <%@include file="WEB-INF/jspf/navbarusuario.jspf"%>
     <center>

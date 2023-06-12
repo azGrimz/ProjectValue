@@ -52,6 +52,6 @@ public class CadastroServlet extends HttpServlet {
             request.setAttribute("erro", "Usuário ou senha inválida!");
         }
 
-        response.sendRedirect("listarprojetos");
+        response.sendRedirect("login");
     }
 }

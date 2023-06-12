@@ -37,34 +37,34 @@ public class CadastrarProjeto extends HttpServlet {
             throws ServletException, IOException {
         System.out.println("POST - CADASTRAR PROJETO");
         request.setCharacterEncoding("UTF-8");
-
+        
+        
         Projeto u = new Projeto();
+        u.setIdUsuario(Integer.parseInt(request.getParameter("idUsuario")));
         u.setNome(request.getParameter("nome"));
         u.setHoraTrabalhada(Double.parseDouble(request.getParameter("horatrabalhada")));
-        u.setTempoDedicadoProjeto(Double.parseDouble(request.getParameter("tempodedicado")));
-        u.setIdUsuario(Integer.parseInt(request.getParameter("idUsuario")));
+        u.setTempoDedicadoProjeto(Double.parseDouble(request.getParameter("tempodedicado")));      
         u.setDatainicio(request.getParameter("datainicio"));
         u.setDatafim(request.getParameter("datafim"));
-        String page = "home.jsp";
 
-        long prazoStatus = calcularPrazoEStatus(u);
+       long prazoStatus = calcularPrazoEStatus(u);
         u.setPrazoDias(prazoStatus);
 
         double valorTotal = calcularValorTotal(u, prazoStatus);
         u.setValorTotal(valorTotal);
-
+        
         ProjetoMetodos dao = new ProjetoMetodos();
         if (dao.cadastraProjeto(u)) {
 
-            page = "listarprojetos";
+            String page = "listarprojetos";
             response.sendRedirect(page);
         } else {
             //enviar um atributo msg de erro
             request.setAttribute("erro", "Projeto não inserido.");
         }
-        ;
+        
     }
-
+    
     public long calcularPrazoEStatus(Projeto p) {
         LocalDate dataInicio = LocalDate.parse(p.getDatainicio());
         LocalDate dataFim = LocalDate.parse(p.getDatafim());
@@ -79,9 +79,9 @@ public class CadastrarProjeto extends HttpServlet {
         long prazoDias = ChronoUnit.DAYS.between(dataInicio, dataFim);
         return prazoDias;
     }
-
+    
     public double calcularValorTotal(Projeto p, long prazoDias) {
-        double valorTotal = p.getHoraTrabalhada() * p.getTempoDedicadoProjeto() * (double) prazoDias;
+        double valorTotal = p.getHoraTrabalhada()* p.getTempoDedicadoProjeto() * (double) prazoDias;
         return valorTotal;
     }
 }
