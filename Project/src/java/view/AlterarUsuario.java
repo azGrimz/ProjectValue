@@ -24,7 +24,7 @@ public class AlterarUsuario extends HttpServlet {
         request.setAttribute("usuario", p);
 
         RequestDispatcher dispatcher = getServletContext()
-                .getRequestDispatcher("/alterarusuario.jsp");
+                .getRequestDispatcher("/alterarCadastro.jsp");
         dispatcher.forward(request, response);
     }
 

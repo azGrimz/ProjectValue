@@ -43,7 +43,8 @@ public class Login extends HttpServlet {
             response.sendRedirect("listarprojetos");
         } else {
             //enviar um atributo msg de erro
-            request.setAttribute("erro", "Usuário ou senha inválida!");
+            //request.setAttribute("erro", "Usuário ou senha inválida!");
+            response.sendRedirect("login");
         }
     }
 
