@@ -28,17 +28,17 @@
                             <input type="password" name="senha" placeholder="Senha">      
                         </div>
                         <br>
-                        <a href="projetos.jsp"><button type="submit" class="btn" style="background: #fe7f2d" >Acessar</button></a>
+                        <a href="login.jsp"><button type="submit" class="btn" style="background: #fe7f2d" >Acessar</button></a>
                         <br>
-                        <a href="cadastro.jsp"><button type="submit" class="btn" style="background: #fe7f2d" >Cadastre-se!</button></a>
-                        <!--<a href="projetos.jsp"><button class="btn-login" style="background: #ff9f1c">Acessar</button></a>
-                        <a href="cadastro.jsp"><button class="btn-login" style="background: #ff9f1c">Cadastre-se</button></a>-->
-                        <!--<a href=""><strong>Cadastre-se!</strong></a>-->
+                        <!--<a href="cadastro.jsp"><button type="submit" class="btn" style="background: #fe7f2d" >Cadastre-se!</button></a>-->
+
                     </form>
 
                 </div>
             </div>
         </div>
+                     
+        <p style="color: red"> ${erro} </p>
 
     </body>
 </html>

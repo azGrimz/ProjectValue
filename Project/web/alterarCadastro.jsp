@@ -21,12 +21,17 @@
                 <h1 class="w3-margin w3-wide ">Altere seu cadastro</h1>
 
             </div>
+            
+            
             <!--</div>-->
 
             <div class="card-cadastro" style="height: 400px">
                 <div class="right-cadastro">
                     <center>
                         <form class="row g-3" action="alterarusuario" method="POST" style="width: 800px">
+
+                           <input type="hidden" name="idUsuario" value="${usuario.id}"/>
+
                             <div class="col-md-6">
                                 <input type="number" name="idUsuario" value="${usuario.id}"placeholder="Informe sua identificacao"/>
                                 <label for="inputEmail4" class="form-label" >Nome de Usuário</label>
