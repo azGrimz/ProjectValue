@@ -29,7 +29,7 @@
                 <div class="right-cadastro">
                     <center>
                         <form class="row g-3" action="alterarusuario" method="POST" style="width: 800px">
-                           <input type="hidden" name="idUsuario" value="${usuario.id}"/
+                           <input type="hidden" name="idUsuario" value="${usuario.id}"/>
                             <div class="col-md-6">
                                 <label for="inputEmail4" class="form-label" >Nome</label>
                                 <input type="text" class="form-control"name="usuario"  id="inputEmail4">
