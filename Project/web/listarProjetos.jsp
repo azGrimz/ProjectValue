@@ -35,6 +35,7 @@
 
                 <th>Nome do projeto</th>
                 <th>Valor Total</th>
+                <th>Status</th> 
                 <th>Ação</th>                
             </tr>
             </thead>
@@ -51,6 +52,7 @@
 
                     <td>${projeto.nome}</td>
                     <td>${projeto.valorTotal}</td>
+                    <td>${projeto.status}</td>
                     <td>
                 <center>
                     

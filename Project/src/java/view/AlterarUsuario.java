@@ -54,6 +54,6 @@ public class AlterarUsuario extends HttpServlet {
             //enviar um atributo msg de erro
             request.setAttribute("erro", "Erro ao alterar");
         }
-        response.sendRedirect("listarprojetos");
+        response.sendRedirect("logout");
     }
 }
